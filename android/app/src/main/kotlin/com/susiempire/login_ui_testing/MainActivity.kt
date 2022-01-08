@@ -1,0 +1,6 @@
+package com.susiempire.login_ui_testing
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
