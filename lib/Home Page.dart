@@ -4,6 +4,7 @@ import 'package:login_ui_testing/constantpage.dart';
 
 import 'food icons.dart';
 import 'food popular.dart';
+import 'food.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -210,24 +211,30 @@ class _HomePageState extends State<HomePage>
                         ),
                       ),
                       for (int i = 0; i < populardata.length; i++) ...{
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          height: 270,
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                topLeft: Radius.circular(10)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.shade400,
-                                  spreadRadius: 5,
-                                  blurRadius: 5,
-                                  offset: Offset(5, 5)),
-                            ],
-                            color: Colors.grey.shade200,
-                          ),
-                          child: InkWell(
-                            onTap: () {},
+                        InkWell(
+                          borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10)),
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (_) => FoodOne()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.symmetric(vertical: 10),
+                            height: 270,
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                  topRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10)),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.shade400,
+                                    spreadRadius: 5,
+                                    blurRadius: 5,
+                                    offset: Offset(5, 5)),
+                              ],
+                              color: Colors.grey.shade200,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
